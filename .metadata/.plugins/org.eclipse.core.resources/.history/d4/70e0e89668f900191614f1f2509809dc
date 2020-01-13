@@ -1,0 +1,107 @@
+package ks.test;
+
+import java.io.IOException;
+
+import org.bouncycastle.util.encoders.Hex;
+import org.junit.Test;
+import ks.API.EncryptAPI;
+import ks.utils.Util;
+
+public class testSM2 {
+	private static EncryptAPI ea = new EncryptAPI();
+
+	@Test
+	//生成SM2密钥对
+	public void testSM2GenKeyPair() {
+		String[] key = ea.generateKeyPair();
+		System.out.println("公钥: ["+key[0]+"]");
+		System.out.println("私钥: ["+key[1]+"]");
+	}
+	
+	@Test
+	//公钥加密数据：C1C2C3
+	public void testSM2encryptByPK1() {
+		String plainText = "123456";
+		String pubk = "E4B4552FE30C4BF8980AD10D5B95A70DBF463420E2BA67EC9F8FAB678213746B27FFFA2FBE8B4A6A3E6D9D6D4D2106A3C3173B82380517F4180C0B8F30194A4F";
+		
+		try {
+			String cipherText = ea.encryptByPK1(pubk, plainText);
+			System.out.println("加密后的密文为: ["+cipherText+"]");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	@Test
+	//公钥加密数据：C1C3C2
+	public void testSM2encryptByPK2() {
+		String plainText = "123456";
+		String pubk = "C94D2ADCF173772AEE9764D6ED7AE7E6DF35157EAF5365D42A1C9FA3F4F053E740CF694B03CD05A7ADB4A26FE89F0C42CB2887DD17ABEA98C3E76B6A3D5B80BE";
+		
+		try {
+			String cipherText = ea.encryptByPK2(pubk, plainText);
+			System.out.println("加密后的密文为: ["+cipherText+"]");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	@Test
+	//私钥解密数据：C1C2C3
+	public void testSM2decryptByVK1() {
+		String privateKey = "33FDAAFD858B3246A73997AB91DD6AAF6729E0B8E9778906F1CEF97D6CCB5F93";
+		String encryptedData = "941087A6C94A1604D08121616C33E78E470C963954E5BFA9906EB15A48DE212E1A62A9484D56F1F74515DB5F25C1FB3BE239B0FB0F827352CD2CC3B3C4430FF3E20CDE083F283F11BBABB0FFEF807BDCD7EBF4E77382D8C1165066FD9850287B3EF67E806F916FD7772BEE643E54E9CE";
+		
+		try {
+			String plainText = ea.decryptByVK1(privateKey, encryptedData);
+			System.out.println("解密后得到的明文为： ["+plainText+ "]");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	//私钥解密数据：C1C3C2
+	public void testSM2decryptByVK2() {
+		String privateKey = "33FDAAFD858B3246A73997AB91DD6AAF6729E0B8E9778906F1CEF97D6CCB5F93";
+		String encryptedData = "941087A6C94A1604D08121616C33E78E470C963954E5BFA9906EB15A48DE212E1A62A9484D56F1F74515DB5F25C1FB3BE239B0FB0F827352CD2CC3B3C4430FF3E20CDE083F283F11BBABB0FFEF807BDCD7EBF4E77382D8C1165066FD9850287B3EF67E806F916FD7772BEE643E54E9CE";
+		
+		try {
+			String plainText = ea.decryptByVK2(privateKey, encryptedData);
+			System.out.println("解密后得到的明文为： ["+plainText+ "]");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	//私钥签名
+	public void testSignWithSm3() throws IOException {
+        String plainText = "123456";
+//        byte[] sourceData = plainText.getBytes();
+        String userId = "1234567812345678";
+        String privateKey = "33FDAAFD858B3246A73997AB91DD6AAF6729E0B8E9778906F1CEF97D6CCB5F93";
+
+        System.out.println("签名数据:["+plainText+"]");
+        //签名
+        String sign = ea.signWithSm3(plainText, privateKey, userId);
+        System.out.println("签名:["+sign+"]");
+	}
+	
+	@Test
+	public void tmpTest() {
+		String num = "80808080808080808080808080808080";
+		String word = "A73997AB91DD6AAF6729E0B8E9778DBA";
+		
+		Util ut = new Util();
+		String numA = ut.hexToAscii(num);
+		System.out.println("临时数字=["+numA+"]");
+		String numB = ut.asciiToHex(numA);
+		System.out.println("数字转换后=["+numB+"]");
+		
+		String wordA = ut.hexToAscii(word);
+		System.out.println("临时字母=["+wordA+"]");
+		String wordB = ut.asciiToHex(wordA);
+		System.out.println("字母转换后=["+wordB+"]");
+	}
+}

@@ -1,0 +1,34 @@
+package test;
+
+class changfangxing {
+	//成员变量
+	private int length;
+	private int width;
+	//无参构造方法
+	public changfangxing() {
+		
+	}
+	//setXxx方法
+	public void setLength(int legth) {
+		this.length = length;
+	}
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	//成员方法
+	public double mianji() {
+		return length * width;
+	}
+}
+
+public class test1 {
+	public static void main(String[] args) {
+		changfangxing cfx = new changfangxing();
+		cfx.setLength(12.5);
+		cfx.setWidth(10);
+		
+		System.out.println(cfx.mianji());
+	}
+}

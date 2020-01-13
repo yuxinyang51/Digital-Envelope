@@ -1,0 +1,12 @@
+package cn.itcast_01;
+
+public class StudentDemo {
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.setName("于欣洋");
+		s.setAge(31);
+		s.show();
+		
+		Student s2 =new Student(;)
+	}
+}

@@ -1,0 +1,40 @@
+package test2;
+
+class Employee {
+	private String name;
+	private String eid;
+	private int age;
+	
+	public Employee() {
+		
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setEid(String eid) {
+		this.eid = eid;
+	}
+	
+	public String geteid() {
+		return eid;
+	}
+	
+	public int setAge(int age) {
+		this.age = age;
+	}
+	
+	public void getAge() {
+		return age;
+	}
+	
+}
+
+public class EmployeeDemo {
+
+}

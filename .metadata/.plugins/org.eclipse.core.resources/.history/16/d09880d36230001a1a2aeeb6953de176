@@ -1,0 +1,11 @@
+package chouxianglei;
+
+abstract class Animal{
+	
+}
+
+public class abstractDemo {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package Array;
+
+public class Demo1 {
+	public static void main(String[] args) {
+		int[] arr = new int[] {1,2,3,4,5};
+		System.err.println(arr[0]);
+		System.err.println(arr[1]);
+		System.err.println(arr[2]);
+		System.err.println(arr[3]);
+		System.err.println(arr[4]);
+		
+	}
+}

@@ -1,0 +1,26 @@
+package Function;
+
+import java.util.Scanner;
+
+public class FunctionDemo2 {
+	public static void main(String[] args) {
+		//创建键盘录入对象
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("请输入第一个数据：");
+		int a = sc.nextInt();
+
+		System.out.println("请输入第二个数据：");
+		int b = sc.nextInt();
+
+		
+	}
+	
+	public static boolean compare(int a, int b) {
+		if(a == b) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+}

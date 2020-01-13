@@ -1,0 +1,22 @@
+package test;
+
+class changfangxing {
+	private int length;
+	private int width;
+	
+	public changfangxing() {
+		
+	}
+	
+	public void setLength(int legth) {
+		this.length = length;
+	}
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+}
+
+public class test1 {
+
+}

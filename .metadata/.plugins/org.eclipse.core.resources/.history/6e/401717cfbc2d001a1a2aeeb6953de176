@@ -1,0 +1,43 @@
+package test;
+
+class changfangxing {
+	//成员变量
+	private double length;
+	private double width;
+	//无参构造方法
+	public changfangxing() {
+		
+	}
+	//setXxx方法
+	public void setLength(double legth) {
+		this.length = legth;
+	}
+	
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	
+	
+	
+	//成员方法 求面积
+	public double getMianji() {
+		System.out.println("length:"+length+"width:"+width);
+		return length * width;
+	}
+	
+	//成员方法 求周长
+	public double getZhouchang() {
+		return (length+width)*2;
+	}
+}
+
+public class test1 {
+	public static void main(String[] args) {
+		changfangxing cfx = new changfangxing();
+		cfx.setLength(12.5);
+		cfx.setWidth(10.0);
+		
+		System.out.println("面积是："cfx.getMianji());
+		System.out.println("周长是："+cfx.getZhouchang());
+	}
+}

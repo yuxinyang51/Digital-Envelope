@@ -1,0 +1,21 @@
+package Array;
+
+import java.awt.print.Printable;
+
+public class Demo2 {
+	public static void main(String[] args) {
+		int[] arr = { 11, 22, 33, 44, 55 };
+		aa(arr);
+	}
+
+	public static void aa(int[] arr) {
+		for (int x = 0; x <= arr.length - 1; x++) {
+			if(x == arr.length-1) {
+				System.out.println(arr[x]);
+			}else {
+				System.out.print(arr[x]+",");				
+			}
+
+		}
+	}
+}

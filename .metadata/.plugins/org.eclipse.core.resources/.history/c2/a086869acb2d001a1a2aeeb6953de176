@@ -1,0 +1,51 @@
+package test2;
+
+class Employee {
+	private String name;
+	private String eid;
+	private int age;
+	
+	public Employee() {
+		
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setEid(String eid) {
+		this.eid = eid;
+	}
+	
+	public String geteid() {
+		return eid;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void show() {
+		System.out.println("姓名:"+name+"工号："+eid+"年龄:"+age);
+	}
+	
+}
+
+public class EmployeeDemo {
+	public static void main(String[] args) {
+		Employee e = new Employee();
+		e.setName("于欣洋");
+		e.setEid("3982");
+		e.setAge(31);
+		
+		e.show();
+	}
+}

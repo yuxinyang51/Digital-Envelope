@@ -1,0 +1,28 @@
+package Function;
+
+public class FunctionDemo4 {
+	public static void main(String[] args) {
+		
+	}
+	
+	//byte类型
+	public static boolean compare(byte a,byte b) {
+		return a ==b;
+	}
+	
+	//short类型
+	public static boolean compare(short a,short b) {
+		return a ==b;
+	}
+	
+	//int类型
+	public static boolean compare(int a,int b) {
+		return a ==b;
+	}
+	
+	//long类型
+	public static boolean compare(long a,long b) {
+		return a ==b;
+	}
+	
+}

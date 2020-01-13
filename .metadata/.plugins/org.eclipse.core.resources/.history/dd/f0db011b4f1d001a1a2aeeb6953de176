@@ -1,0 +1,26 @@
+package Function;
+
+public class FunctionDemo {
+	public static void main(String[] args) {
+		int a = 10;
+		int b =30;
+		
+		int result = getMax(a,b);
+		System.out.println(result);
+	}
+	
+	/*
+	 * 	需求：两个数中的较大值
+	 * 	两个明确：
+	 * 		返回值类型：int 
+	 * 		参数列表：int a, int b
+	 * */
+	
+	public static int getMax(int a ,int b) {
+		if (a>b) {
+			return a;
+		}else {
+			return b;
+		}
+	}
+}

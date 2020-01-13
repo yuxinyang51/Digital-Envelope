@@ -1,0 +1,30 @@
+package test3;
+
+class  Animal {
+	public void eat() {
+		System.out.println("Animal eat");
+	}
+}
+
+class Dog extends Animal{
+	public void eat() {
+		System.out.println("dog eat");
+	}
+	
+	public void lookDeoor() {
+		System.out.println("lookdoor");
+	}
+}
+
+class Cat extends Animal {
+	public void eat() {
+		System.out.println("cat eat");
+	}
+	
+	public void playGame() {
+		System.out.println("playGame");
+	}
+}
+public class AnimalDemo {
+
+}

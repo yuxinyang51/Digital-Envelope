@@ -1,0 +1,9 @@
+package chouxianglei;
+
+abstract class Animal{
+	
+}
+
+public class abstractDemo {
+
+}

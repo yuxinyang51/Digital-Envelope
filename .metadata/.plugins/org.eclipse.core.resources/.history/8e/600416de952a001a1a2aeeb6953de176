@@ -1,0 +1,32 @@
+package mianxiangduixiang;
+
+class Student {
+	private String name;
+	private int age;
+	private String address;
+	
+	public String getName() {
+		return this.name;//这里其实隐含了this
+	}
+	
+	public void setName(String name) {//形式参数,是该方法的局部变量,随着方法的调用而存在于堆内存。
+		this.name = name;//这里的this指向的是Student类中的成员变量name,这里使用this是为了解除局部变量隐藏成员变量的问题。
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+
+public class Test01 {
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.setName("张三");
+		s.setAge(30);
+		System.out.println(s.getAge()+"---"+s.getName());
+	}
+}
